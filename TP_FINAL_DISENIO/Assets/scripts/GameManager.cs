@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
         alertaScript = FindAnyObjectByType<alertaScript>().GetComponent<alertaScript>();
         velocidadMaxima = 90;
         puntajeActual = 100;
-        puntajeMinimo = 40;
+        puntajeMinimo = 60;
 
     }
 
@@ -30,17 +30,17 @@ public class GameManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "auto")
-        {
+        Debug.Log("actual: "+ puntajeActual + " minimo: "+ puntajeMinimo);
+        
             if (puntajeActual < puntajeMinimo)
             {
-                //gano
+            StartCoroutine( alertaScript.CambiarTexto("aprobo"));
             }
             else
             {
-                //perdio
-            }
+            StartCoroutine(alertaScript.CambiarTexto("desaprobo"));
         }
+        
     }
     public void CambiarVelocidadMaxima(float nuevaVelocidad)
     {

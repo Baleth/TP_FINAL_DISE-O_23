@@ -11,7 +11,6 @@ public class VelocidadMaximaScript : MonoBehaviour
     void Start()
     {
         alerta = FindAnyObjectByType<alertaScript>().GetComponent<alertaScript>();
-
         controlAuto = FindAnyObjectByType<ControlAuto>().GetComponent<ControlAuto>();
         gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
     }
