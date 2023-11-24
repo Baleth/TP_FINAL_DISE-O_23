@@ -1,12 +1,13 @@
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ControlAuto : MonoBehaviour
 {
-   
+
     private Touch touch;
     [System.Serializable]
     public class infoEje
@@ -21,6 +22,8 @@ public class ControlAuto : MonoBehaviour
     public float maxMotorTorsion;
     public float maxAnguloDeGiro;
     public float velocity;
+    public Vector3 posInicial;
+    public Quaternion rotInicial;
     //Los collider
     [SerializeField] private WheelCollider frontLeftWheelCollider;
     [SerializeField] private WheelCollider frontRightWheelCollider;
@@ -30,8 +33,8 @@ public class ControlAuto : MonoBehaviour
     Rigidbody body;
     private void Start()
     {
-
-
+        posInicial = transform.position;
+        rotInicial = transform.rotation;
         body = GetComponent<Rigidbody>();
     }
     void posRuedas(WheelCollider collider)
@@ -142,8 +145,17 @@ public class ControlAuto : MonoBehaviour
         }
 
     }
+    public IEnumerator Detener()
+    {
+        frontLeftWheelCollider.motorTorque = 0;
+        frontRightWheelCollider.motorTorque = 0;
+        rearLeftWheelCollider.motorTorque = 0;
+        rearRightWheelCollider.motorTorque = 0;
+        yield return new WaitForSeconds(3);
+        transform.position = posInicial;
+        transform.rotation = rotInicial;
+    }
 
-    
 
     public void Presiono()
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    
+
     public float puntajeActual;
     float puntajeMinimo;
     float velocidadMaxima;
@@ -16,23 +16,23 @@ public class GameManager : MonoBehaviour
         controlAuto = FindAnyObjectByType<ControlAuto>().GetComponent<ControlAuto>();
         alertaScript = FindAnyObjectByType<alertaScript>().GetComponent<alertaScript>();
         velocidadMaxima = 90;
-        puntajeActual  = 100;
+        puntajeActual = 100;
         puntajeMinimo = 40;
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
         velocidadAuto = controlAuto.getVelocity();
-         
+
 
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag =="auto") 
+        if (other.tag == "auto")
         {
-            if (puntajeActual < puntajeMinimo) 
+            if (puntajeActual < puntajeMinimo)
             {
                 //gano
             }
@@ -40,15 +40,17 @@ public class GameManager : MonoBehaviour
             {
                 //perdio
             }
-        }    
+        }
     }
-    public void CambiarVelocidadMaxima(float nuevaVelocidad) 
+    public void CambiarVelocidadMaxima(float nuevaVelocidad)
     {
         velocidadMaxima = nuevaVelocidad;
     }
-    public void QuitarPuntaje(float cantidad,string clave) 
+    public void QuitarPuntaje(float cantidad, string clave)
     {
         StartCoroutine(alertaScript.CambiarTexto(clave));
-        puntajeActual -= cantidad; 
+        puntajeActual -= cantidad;
+        StartCoroutine(controlAuto.Detener());
     }
+
 }
