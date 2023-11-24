@@ -11,6 +11,6 @@ public class ColisionGirarDerecha : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        manager.QuitarPuntaje(10);
+        manager.QuitarPuntaje(10,"girar");
     }
 }

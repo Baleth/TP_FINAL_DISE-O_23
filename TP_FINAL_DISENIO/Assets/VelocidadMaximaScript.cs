@@ -19,7 +19,7 @@ public class VelocidadMaximaScript : MonoBehaviour
         {
             if (controlAuto.getVelocity() > 60)
             {
-                gameManager.QuitarPuntaje(10);
+                gameManager.QuitarPuntaje(10,"velocidad");
             }
         }
     }
