@@ -6,9 +6,10 @@ public class VelocidadMaximaScript : MonoBehaviour
 {
      float velocidadACambiar;
   GameManager gameManager;
+  ControlAuto controlAuto;
     void Start()
     {
-        velocidadACambiar = 60;
+        controlAuto = FindAnyObjectByType<ControlAuto>().GetComponent<ControlAuto>();
         gameManager = FindAnyObjectByType<GameManager>().GetComponent<GameManager>();
     }
 
@@ -16,8 +17,10 @@ public class VelocidadMaximaScript : MonoBehaviour
     {
         if (other.tag == "auto") 
         {
-           
-            gameManager.CambiarVelocidadMaxima(velocidadACambiar);
+            if (controlAuto.getVelocity() > 60)
+            {
+                gameManager.QuitarPuntaje(10);
+            }
         }
     }
 }
