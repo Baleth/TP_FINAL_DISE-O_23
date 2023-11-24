@@ -15,12 +15,11 @@ public class VelocidadMaximaScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "auto") 
-        {
+        
             if (controlAuto.getVelocity() > 60)
             {
                 gameManager.QuitarPuntaje(10,"velocidad");
             }
-        }
+        
     }
 }
