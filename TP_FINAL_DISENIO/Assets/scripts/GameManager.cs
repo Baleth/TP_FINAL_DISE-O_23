@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
     float velocidadMaxima;
     public float velocidadAuto;
     ControlAuto controlAuto;
+    alertaScript alertaScript;
     void Start()
     {
         controlAuto = FindAnyObjectByType<ControlAuto>().GetComponent<ControlAuto>();
+        alertaScript = FindAnyObjectByType<alertaScript>().GetComponent<alertaScript>();
         velocidadMaxima = 90;
         puntajeActual  = 100;
         puntajeMinimo = 40;
@@ -44,8 +46,9 @@ public class GameManager : MonoBehaviour
     {
         velocidadMaxima = nuevaVelocidad;
     }
-    public void QuitarPuntaje(float cantidad) 
+    public void QuitarPuntaje(float cantidad,string clave) 
     {
+        StartCoroutine(alertaScript.CambiarTexto(clave));
         puntajeActual -= cantidad; 
     }
 }

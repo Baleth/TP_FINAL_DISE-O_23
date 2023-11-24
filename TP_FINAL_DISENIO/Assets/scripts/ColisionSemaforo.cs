@@ -18,7 +18,7 @@ public class ColisionSemaforo : MonoBehaviour
         if (semaforoScript.colorActual == "rojo") 
         {
           
-            gameManager.QuitarPuntaje(10);
+            gameManager.QuitarPuntaje(10,"semaforo");
 
             Debug.Log(" Pase en rojo"+gameManager.puntajeActual);
         }

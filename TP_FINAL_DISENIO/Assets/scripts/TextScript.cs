@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TextScript : MonoBehaviour
 {
-    TextMeshProUGUI texto;
+   public TextMeshProUGUI texto;
     GameManager gameManager;
     // Start is called before the first frame update
     void Start()
