@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,7 +21,7 @@ public class ControlAuto : MonoBehaviour
     public List<infoEje> infoEjes;
     public float maxMotorTorsion;
     public float maxAnguloDeGiro;
-
+    public float velocity;
     //Los collider
     [SerializeField] private WheelCollider frontLeftWheelCollider;
     [SerializeField] private WheelCollider frontRightWheelCollider;
@@ -101,7 +102,7 @@ public class ControlAuto : MonoBehaviour
     {
         toqueAcelerar();
         toqueFrenar();
-          Debug.Log((Mathf.Sqrt(Mathf.Pow(body.velocity.x,2)+ Mathf.Pow(body.velocity.z, 2)))*6);
+        velocity =Mathf.Round((Mathf.Sqrt(Mathf.Pow(body.velocity.x, 2) + Mathf.Pow(body.velocity.z, 2))*6));
        // ControlarFrenado();
 
         //float motor = maxMotorTorsion * Input.GetAxis("Vertical");
@@ -167,5 +168,8 @@ public class ControlAuto : MonoBehaviour
     {
         Debug.Log("Deje de presionar");
     }
-
+    public float getVelocity() 
+    {
+        return velocity;
+    }
 }
