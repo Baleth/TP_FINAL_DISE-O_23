@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -156,9 +156,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 289084020}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 307, y: 272}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -100, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &106720104
@@ -884,9 +884,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 289084020}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -406, y: 265}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 121, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &882525240
@@ -1299,6 +1299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1131331910}
   - component: {fileID: 1131331911}
+  - component: {fileID: 1131331912}
   m_Layer: 0
   m_Name: collider2
   m_TagString: Untagged
@@ -1336,12 +1337,24 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 8.739576, y: 1.9399201, z: 1}
   m_Center: {x: 1.0077897, y: 0.46995896, z: -6.290386e-10}
+--- !u!114 &1131331912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131331909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef6573da1e4b4d42bbf53538a6eb708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1290602907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,6 +1521,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1474035748}
   - component: {fileID: 1474035749}
+  - component: {fileID: 1474035750}
   m_Layer: 0
   m_Name: collider1
   m_TagString: Untagged
@@ -1551,6 +1565,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 3.3717036, z: 8.403532}
   m_Center: {x: -2.0894564e-10, y: 1.185806, z: -0.49663994}
+--- !u!114 &1474035750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474035747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef6573da1e4b4d42bbf53538a6eb708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1527242627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1649,7 +1675,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1922,6 +1948,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9091935055468471945, guid: e4946c14f5059db49a87ebe6ef60133b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091935055468471945, guid: e4946c14f5059db49a87ebe6ef60133b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1972,6 +2006,10 @@ PrefabInstance:
     - target: {fileID: 2927114376407812802, guid: ed6acd32e0290b24cb2bd6e039eb7517, type: 3}
       propertyPath: m_Name
       value: "se\xF1al velocidad maxima"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000451904858581997, guid: ed6acd32e0290b24cb2bd6e039eb7517, type: 3}
+      propertyPath: m_Size.x
+      value: 5.18
       objectReference: {fileID: 0}
     - target: {fileID: 5000451904858581997, guid: ed6acd32e0290b24cb2bd6e039eb7517, type: 3}
       propertyPath: m_Size.y
