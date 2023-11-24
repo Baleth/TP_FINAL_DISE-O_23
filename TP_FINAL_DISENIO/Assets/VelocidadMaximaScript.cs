@@ -16,6 +16,7 @@ public class VelocidadMaximaScript : MonoBehaviour
     {
         if (other.tag == "auto") 
         {
+           
             gameManager.CambiarVelocidadMaxima(velocidadACambiar);
         }
     }
