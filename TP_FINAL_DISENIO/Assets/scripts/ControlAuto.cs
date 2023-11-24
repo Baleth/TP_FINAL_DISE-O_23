@@ -147,11 +147,15 @@ public class ControlAuto : MonoBehaviour
     }
     public IEnumerator Detener()
     {
-        frontLeftWheelCollider.motorTorque = 0;
-        frontRightWheelCollider.motorTorque = 0;
-        rearLeftWheelCollider.motorTorque = 0;
-        rearRightWheelCollider.motorTorque = 0;
+        frontLeftWheelCollider.brakeTorque = 150000;
+        frontRightWheelCollider.brakeTorque = 150000;
+        rearLeftWheelCollider.brakeTorque = 150000;
+        rearRightWheelCollider.brakeTorque = 150000;
         yield return new WaitForSeconds(3);
+        frontLeftWheelCollider.brakeTorque = 0;
+        frontRightWheelCollider.brakeTorque = 0;
+        rearLeftWheelCollider.brakeTorque = 0;
+        rearRightWheelCollider.brakeTorque = 0;
         transform.position = posInicial;
         transform.rotation = rotInicial;
     }
