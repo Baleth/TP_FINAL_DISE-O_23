@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     float tiempoTranscurrido;
     float tiempoAquitarPuntos;
+    float tiempoEntrePuntos;
     public float puntajeActual;
     float puntajeMinimo;
     float velocidadMaxima;
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
         puntajeActual  = 100;
         puntajeMinimo = 40;
         tiempoTranscurrido = 0;
+        tiempoAquitarPuntos = 0;  
+        tiempoEntrePuntos = 2;
     }
 
     // Update is called once per frame
@@ -25,11 +28,31 @@ public class GameManager : MonoBehaviour
     {
         velocidadAuto = controlAuto.getVelocity();
        
-        tiempoTranscurrido += Time.deltaTime;    
+        tiempoTranscurrido += Time.deltaTime;
+        
+        if(velocidadAuto > velocidadMaxima)
+        {
+            if (tiempoTranscurrido > tiempoAquitarPuntos) 
+            {
+                QuitarPuntaje(2);
+                tiempoAquitarPuntos = tiempoTranscurrido + tiempoEntrePuntos;
+            }
+        }
+
     }
     private void OnTriggerEnter(Collider other)
     {
-        //Termino el recorrido
+        if (other.tag =="auto") 
+        {
+            if (puntajeActual < puntajeMinimo) 
+            {
+                //gano
+            }
+            else
+            {
+                //perdio
+            }
+        }    
     }
     public void CambiarVelocidadMaxima(float nuevaVelocidad) 
     {

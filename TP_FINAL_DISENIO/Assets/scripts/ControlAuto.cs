@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class ControlAuto : MonoBehaviour
 {
-    private bool band;
-    private bool fren;
+   
     private Touch touch;
     [System.Serializable]
     public class infoEje
@@ -32,7 +31,6 @@ public class ControlAuto : MonoBehaviour
     private void Start()
     {
 
-        Button boton;
 
         body = GetComponent<Rigidbody>();
     }
@@ -145,20 +143,7 @@ public class ControlAuto : MonoBehaviour
 
     }
 
-    public void Positivo()
-    {
-        band = true;
-
-    }
-    public void Negativo()
-    {
-        band = false;
-    }
-    public void FrenoPos()
-    {
-        fren = true;
-
-    }
+    
 
     public void Presiono()
     {
